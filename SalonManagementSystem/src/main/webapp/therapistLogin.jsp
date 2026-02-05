@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Go to next page after animation
         setTimeout(() => {
             sessionStorage.removeItem("successMsg");
-            window.location.href = "index.html"; // 🔁 change page here
+            window.location.href = "index.jsp"; // 🔁 change page here
         }, 100);
 
     }, 900);
