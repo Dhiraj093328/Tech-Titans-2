@@ -1,13 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Admin Registration Page</title>
 <link href="CSS/bootstrap.min.css" rel="stylesheet">
+<link href="CSS/popup.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <style>
+
+
 body {
     min-height: 100vh;
     background: linear-gradient(135deg, #74ebd5, #9face6);
@@ -84,6 +88,7 @@ if(error != null) {
 <%
 }
 %>
+
 					<form action="ShopRegister" method="post" class="needs-validation" novalidate>
 						<h6 class="text-uppercase fw-semibold text-primary mt-4 mb-3">
     						Shop Details
@@ -190,6 +195,28 @@ if(error != null) {
 	</div>
 </div>
 </div>
+<script>
+(function () {
+    const params = new URLSearchParams(window.location.search);
+    const flash = params.get("flash");
+
+    if (!flash) return;
+
+    if (flash === "register")
+        localStorage.setItem("flashMsg", "Registration successful ✅ Please login");
+    if (flash === "Adminregister")
+        localStorage.setItem("flashMsg", "Registration successful ✅ Please login Admin");
+
+    if (flash === "login")
+        localStorage.setItem("flashMsg", "Login successful 🎉 Welcome!");
+    if (flash === "Adminlogin")
+        localStorage.setItem("flashMsg", "Login successful 🎉 Welcome Back Admin!");
+
+})();
+</script>
+
+<script src="JS/flashPopup.js"></script>
+
 <script>
 function togglePassword() {
     const pass = document.getElementById("password");
