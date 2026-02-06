@@ -108,13 +108,13 @@
         </div>
     </div>
 
-    <!-- Success Popup -->
-    <div class="popup-overlay" id="successPopup">
-        <div class="popup-content">
-            <div class="success-icon">
+    <!-- Popup (Success or Error) -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content" id="popupContent">
+            <div class="popup-icon" id="popupIcon">
                 <i class="fas fa-check"></i>
             </div>
-            <h3>Account Created Successfully!</h3>
+            <h3 id="popupMessage">Account Created Successfully!</h3>
             <button class="btn-close-popup" id="closePopup">OK</button>
         </div>
     </div>
