@@ -1,0 +1,115 @@
+@charset "UTF-8";
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, rgba(102,126,234,0.85), rgba(118,75,162,0.85));
+    background-attachment: fixed;
+    background-size: cover;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+.header {
+    background: linear-gradient(135deg, #1a237e, #283593, #1a237e);
+    padding: 20px 35px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo::before {
+    content: "✂️ ";
+}
+
+/* ================= NAV ================= */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav a {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 8px;
+    border: 2px solid rgba(255,255,255,0.3);
+    transition: 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+    background: white;
+    color: #1a237e;
+}
+
+/* ================= HERO ================= */
+.hero {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+}
+
+/* ================= MAIN CONTENT ================= */
+.main-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 25px;
+}
+
+/* ================= FEATURES ================= */
+.feature-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.icon {
+    font-size: 40px;
+}
+
+/* ================= ADS ================= */
+.ad-box {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255,255,255,0.9);
+}

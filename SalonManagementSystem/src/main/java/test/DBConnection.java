@@ -16,7 +16,7 @@ public class DBConnection {
                 "root"
             );
         } catch (Exception e) {
-            e.printStackTrace();   // better than System.out.println
+            System.out.println(e);   // better than System.out.println
         }
         return con;
     }

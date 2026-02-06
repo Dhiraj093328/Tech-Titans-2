@@ -21,29 +21,12 @@
 </head>
 <body>
 
-    <!-- Animated Background Effects -->
-    <div class="background-animation">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <span class="sparkle"></span>
-        <span class="sparkle"></span>
-        <span class="sparkle"></span>
-    </div>
-
     <div class="main-content">
         <div class="login-container">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header text-center">
                     <h4>
-                        <div class="header-icon">
-                            <i class="fas fa-sign-in-alt"></i>
-                        </div>
-                        Login Page
+                        <i class="fas fa-sign-in-alt"></i> Login Page
                     </h4>
                 </div>
 
@@ -54,7 +37,7 @@
                         String error = (String) request.getAttribute("error");
                         if (error != null) {
                     %>
-                    <div class="error-message">
+                    <div class="alert alert-danger text-center">
                         <i class="fas fa-exclamation-circle"></i>
                         <span><%= error %></span>
                     </div>
@@ -62,45 +45,41 @@
                         }
                     %>
 
+                    <!-- Login Form -->
                     <form id="loginForm"
-                          action="${pageContext.request.contextPath}/LoginServlet"
+                          action="${pageContext.request.contextPath}/login"
                           method="post">
 
                         <!-- Username -->
-                        <div class="input-group">
-                            <label class="form-label">Username</label>
-                            <div class="input-wrapper">
-                                <input type="text" name="username" class="form-control"
-                                       placeholder="Enter your username" required>
-                                <i class="fas fa-user input-icon"></i>
-                            </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" name="username" class="form-control"
+                                   placeholder="Enter your username" required>
                         </div>
 
                         <!-- Password -->
-                        <div class="input-group">
-                            <label class="form-label">Password</label>
-                            <div class="input-wrapper">
-                                <input type="password" name="password" id="password"
-                                       class="form-control" placeholder="Enter your password" required>
-                                <i class="fas fa-lock input-icon"></i>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" name="password" id="password"
+                                   class="form-control" placeholder="Enter your password" required>
+                            <span class="input-group-text">
                                 <i class="fas fa-eye password-toggle" id="togglePassword"></i>
-                            </div>
+                            </span>
                         </div>
 
-                        <!-- Remember Me & Forgot Password -->
-                        <div class="form-options">
-                            
+                        <!-- Forgot Password -->
+                        <div class="mb-3 text-end">
                             <a href="#" class="forgot-password">Forgot Password?</a>
                         </div>
 
-                        <button type="submit" class="btn-login">
+                        <button type="submit" class="btn btn-primary w-100">
                             <i class="fas fa-sign-in-alt"></i> Login
                         </button>
                     </form>
                 </div>
 
-                <div class="card-footer">
-                    New User?
+                <div class="card-footer text-center">
+                    New User? 
                     <a href="${pageContext.request.contextPath}/userRegister.jsp">
                         <i class="fas fa-user-plus"></i> Register Here
                     </a>
@@ -109,29 +88,26 @@
         </div>
     </div>
 
-    <!-- Success Login Popup -->
-    <div class="popup-overlay" id="successPopup">
-        <div class="popup-content">
-            <div class="success-icon">
-                <i class="fas fa-check"></i>
-            </div>
-            <h3>🎉 Login Successful!</h3>
-            <p>Welcome back! Redirecting to your dashboard...</p>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-text">© 2026 Salon Management System. All Rights Reserved.</p>
-            <p class="footer-subtext">Crafted with ❤️ for Beauty & Wellness Professionals</p>
-        </div>
+    <!-- Footer -->
+    <footer class="footer text-center mt-4">
+        <p>© 2026 Salon Management System. All Rights Reserved.</p>
+        <p>Crafted with ❤️ for Beauty & Wellness Professionals</p>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS -->
-    <script src="${pageContext.request.contextPath}/JS/userLogin.js"></script>
+    <!-- Password Toggle JS -->
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
+
+        togglePassword.addEventListener('click', () => {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            togglePassword.classList.toggle('fa-eye-slash');
+        });
+    </script>
 
 </body>
 </html>

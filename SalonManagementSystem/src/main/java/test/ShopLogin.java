@@ -48,7 +48,7 @@ public class ShopLogin extends HttpServlet {
 			 {
 	                
 	                HttpSession session = request.getSession();
-	                response.sendRedirect("index.jsp?flash=Adminlogin");
+	                response.sendRedirect("AdminDashboard.jsp?flash=Adminlogin");
 		        	
 		        	
 	         }else
