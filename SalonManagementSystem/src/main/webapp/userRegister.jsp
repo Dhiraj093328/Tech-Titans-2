@@ -21,7 +21,7 @@
 </head>
 <body>
 
-    <!-- Animated Background Effects -->
+    <!-- Animated Background -->
     <div class="background-animation">
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -55,8 +55,7 @@
                         <div class="input-group">
                             <label class="form-label">Full Name</label>
                             <div class="input-wrapper">
-                                <input type="text" name="name" class="form-control"
-                                       placeholder="Enter your full name" required>
+                                <input type="text" name="name" class="form-control" placeholder="Enter your full name" required>
                                 <i class="fas fa-user input-icon"></i>
                             </div>
                         </div>
@@ -64,8 +63,7 @@
                         <div class="input-group">
                             <label class="form-label">Email Address</label>
                             <div class="input-wrapper">
-                                <input type="email" name="email" class="form-control"
-                                       placeholder="your.email@example.com" required>
+                                <input type="email" name="email" class="form-control" placeholder="your.email@example.com" required>
                                 <i class="fas fa-envelope input-icon"></i>
                             </div>
                         </div>
@@ -73,8 +71,7 @@
                         <div class="input-group">
                             <label class="form-label">Contact Number</label>
                             <div class="input-wrapper">
-                                <input type="text" name="contact" class="form-control"
-                                       placeholder="+91 XXXXX XXXXX" required>
+                                <input type="text" name="contact" class="form-control" placeholder="+91 XXXXX XXXXX" required>
                                 <i class="fas fa-phone input-icon"></i>
                             </div>
                         </div>
@@ -82,8 +79,7 @@
                         <div class="input-group">
                             <label class="form-label">Username</label>
                             <div class="input-wrapper">
-                                <input type="text" name="username" class="form-control"
-                                       placeholder="Choose a unique username" required>
+                                <input type="text" name="username" class="form-control" placeholder="Choose a unique username" required>
                                 <i class="fas fa-user-circle input-icon"></i>
                             </div>
                         </div>
@@ -91,8 +87,7 @@
                         <div class="input-group">
                             <label class="form-label">Password</label>
                             <div class="input-wrapper">
-                                <input type="password" name="password" class="form-control"
-                                       placeholder="Create a strong password" required>
+                                <input type="password" name="password" class="form-control" placeholder="Create a strong password" required>
                                 <i class="fas fa-lock input-icon"></i>
                             </div>
                         </div>
@@ -119,11 +114,8 @@
             <div class="success-icon">
                 <i class="fas fa-check"></i>
             </div>
-            <h3>🎉 Welcome Aboard!</h3>
-            <p>Your account has been successfully created. Get ready to experience the best salon management system!</p>
-            <button class="btn-close-popup" onclick="closePopup()">
-                <i class="fas fa-arrow-right"></i> Continue to Login
-            </button>
+            <h3>Account Created Successfully!</h3>
+            <button class="btn-close-popup" id="closePopup">OK</button>
         </div>
     </div>
 
