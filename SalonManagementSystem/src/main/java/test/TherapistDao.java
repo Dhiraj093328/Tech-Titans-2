@@ -9,23 +9,7 @@ import java.util.List;
 
 public class TherapistDao {
 
-	public static Connection getConnection()
-	{
-		Connection con = null;
-		
-		try
-		{
-			//driver
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			
-			//connection
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/saloon_management","root","root");
-		}catch(Exception e)
-		{
-			System.out.println(e);
-		}
-		return con;
-	}
+	
 	
 	public static int SaveTherapist(Therapist t)
 	{
@@ -33,7 +17,7 @@ public class TherapistDao {
 		
 		try
 		{
-			Connection con = getConnection();
+			Connection con = DBConnection.getConnection();
 			PreparedStatement ps = con.prepareStatement("insert into therapist(name,email,contact_no,username,password) values(?,?,?,?,?)");
 			ps.setString(1, t.getName());
 			ps.setString(2, t.getEmail());
@@ -43,6 +27,7 @@ public class TherapistDao {
 			
 			status = ps.executeUpdate();
 			
+			ps.close();
 			con.close();
 		}catch(Exception e)
 		{
@@ -56,7 +41,7 @@ public class TherapistDao {
 		Therapist t = new Therapist();
 		try
 		{
-			Connection con = getConnection();
+			Connection con = DBConnection.getConnection();
 			PreparedStatement ps = con.prepareStatement("select * from therapist where username=?");
 			ps.setString(1, user);
 			
@@ -71,6 +56,7 @@ public class TherapistDao {
 				t.setUsername(rs.getString(5));
 				t.setPassword(rs.getString(6));
 			}
+			rs.close();
 			con.close();
 		}catch(Exception e)
 		{
@@ -85,7 +71,7 @@ public class TherapistDao {
 		
 		try
 		{
-			Connection con = getConnection();
+			Connection con = DBConnection.getConnection();
 			PreparedStatement ps = con.prepareStatement("select * from therapist");
 			
 			ResultSet rs = ps.executeQuery();
@@ -103,6 +89,7 @@ public class TherapistDao {
 				
 				list.add(t);
 			}
+			rs.close();
 			con.close();
 		}catch(Exception e)
 		{
@@ -116,11 +103,12 @@ public class TherapistDao {
 		int status = 0;
 		try
 		{
-			Connection con = getConnection();
+			Connection con = DBConnection.getConnection();
 			PreparedStatement ps = con.prepareStatement("delete from therapist where therapist_id=?");
 			ps.setInt(1, id);
 			status = ps.executeUpdate();
 			
+			ps.close();
 			con.close();
 		}catch(Exception e)
 		{
@@ -135,7 +123,7 @@ public class TherapistDao {
 		
 		try
 		{
-			Connection con = getConnection();
+			Connection con = DBConnection.getConnection();
 			PreparedStatement ps = con.prepareStatement("update therapist set name=?, email=?, contact_no=?, username=?, password=? where id=?");
 			ps.setString(1, t.getName());
 			ps.setString(2,t.getEmail());
@@ -146,6 +134,7 @@ public class TherapistDao {
 			
 			status = ps.executeUpdate();
 			
+			ps.close();
 			con.close();
 		}catch(Exception e)
 		{
