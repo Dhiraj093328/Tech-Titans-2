@@ -13,7 +13,6 @@
 </head>
 
 <body>
-<div id="popup" class="popup"></div>
 <!-- ================= HEADER ================= -->
 <div class="header">
     <div class="logo">Beauty Hub Therapist</div>

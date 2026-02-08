@@ -8,12 +8,19 @@
 <title>Shop Owner Registration Page</title>
 <link href="CSS/bootstrap.min.css" rel="stylesheet">
 <link href="CSS/popup.css" rel="stylesheet">
+<link href="CSS/ATFooter.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <style>
 
+.main-content{
+    padding-top:40px;
+    padding-bottom:80px;
+}
 
 body {
-    min-height: 100vh;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
     background: linear-gradient(135deg, #74ebd5, #9face6);
 }
 #registerBtn {
@@ -62,7 +69,7 @@ body {
 </head>
 <body class="bg-light">
 
-<div class="d-flex align-items-center">
+<div class="main-content flex-grow-1">
 <div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -95,35 +102,37 @@ if(error != null) {
 						</h6>
 						<div class="mt-3">
     						<label class="form-label">Shop Name</label>
-    						<input type="text" class="form-control" name="shop_name" pattern="[A-Za-z0-9 ]{3,100}" required>
+    						<input type="text" class="form-control" name="shop_name" pattern="[A-Za-z0-9 ]{3,100}" placeholder="Enter Your Shop Name" required>
     						<div class="invalid-feedback">
         						Shop name Required and must be at least 3 characters
     						</div>
 						</div>
 						<div class="mt-3">
     						<label class="form-label">Registration No.</label>
-    						<input type="text" class="form-control" name="register_no"  pattern="[A-Za-z0-9-]{5,20}" required>
+    						<input type="text" class="form-control" name="register_no"  pattern="[A-Za-z0-9-]{5,20}" placeholder="Enter Your Shop Registered No." required>
     						<div class="invalid-feedback">
         						Shop Registerd Number Required
     						</div>
 						</div>
 						<div class="mt-3">
     						<label class="form-label">Owner Name</label>
-    						<input type="text" class="form-control" name="owner_name" pattern="[A-Za-z ]{3,100}" required>
+    						<input type="text" class="form-control" name="owner_name" pattern="[A-Za-z ]{3,100}" placeholder="Enter Your Name" required>
     						<div class="invalid-feedback">
         						Shop OwnerName must contain only letters (minimum 3 characters)
     						</div>
 						</div>
 						<div class="mt-3">
 							<label class="form-label">Opening Time</label>
-							<input class="form-control" type="time" name="opening_time" required>
+							<input class="form-control" type="time" name="opening_time" placeholder="Enter Your Shop Opening Time" required>
+							<small class="text-muted">Select Shop Opening Time</small>
 							<div class="invalid-feedback">
         						Shop Opening Time Required
     						</div>
 						</div>
 						<div class="mt-3">
 							<label class="form-label">Closing Time</label>
-							<input class="form-control" type="time" name="closing_time" required>
+							<input class="form-control" type="time" name="closing_time" placeholder="Enter Your Shop Closing Time" required>
+							<small class="text-muted">Select Shop Closing Time</small>
 							<div class="invalid-feedback">
         						Shop Closing Time Required
     						</div>
@@ -134,7 +143,7 @@ if(error != null) {
     						<label class="form-label">Email</label>
     						<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-envelope"></i></span>
-        						<input type="email" class="form-control" name="email" required>
+        						<input type="email" class="form-control" name="email" placeholder="Enter Your Email" required>
         						<div class="invalid-feedback">
         							Please enter a valid email address
     							</div>
@@ -144,7 +153,7 @@ if(error != null) {
     						<label class="form-label">Contact No</label>
     						<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-telephone"></i></span>
-        						<input type="text" class="form-control" name="contact_no" pattern="[0-9]{10}" required>
+        						<input type="text" class="form-control" name="contact_no" pattern="[0-9]{10}" placeholder="Enter Your Mobile No." required>
         						<div class="invalid-feedback">
         							Shop Contact number must be exactly 10 digits
     							</div>
@@ -156,7 +165,7 @@ if(error != null) {
     						<label class="form-label">Username</label>
     						<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-person"></i></span>
-        						<input type="text" class="form-control" name="auser" pattern="[A-Za-z0-9._]{5,20}" required>
+        						<input type="text" class="form-control" name="auser" pattern="[A-Za-z0-9._]{5,20}" placeholder="Enter Your Username" required>
         						<div class="invalid-feedback">
         							Shop Username must be 5–20 characters (letters, numbers, . or _)
     							</div>
@@ -166,7 +175,7 @@ if(error != null) {
     						<label class="form-label">Password</label>
     						<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-lock"></i></span>
-        						<input type="password" class="form-control" id="password" name="apass"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+        						<input type="password" class="form-control" id="password" name="apass"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Your Password" required>
         						<div class="invalid-feedback">
         							Shop Password must contain uppercase, lowercase, number & 8+ characters
     							</div>
@@ -195,6 +204,16 @@ if(error != null) {
 	</div>
 </div>
 </div>
+<footer class=" footer">
+    <div class="container">
+        <p class="footer-text">
+            © 2026 Salon Management System. All Rights Reserved.
+        </p>
+        <p class="footer-subtext">
+            Crafted with <span>❤</span> for Beauty & Wellness Professionals
+        </p>
+    </div>
+</footer>
 <script>
 (function () {
     const params = new URLSearchParams(window.location.search);

@@ -8,6 +8,7 @@
 
 <link href="CSS/bootstrap.min.css" rel="stylesheet">
 <link href="CSS/popup.css" rel="stylesheet">
+<link href="CSS/ATFooter.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
 <style>
@@ -31,6 +32,9 @@
     to   { opacity: 1; transform: translateY(0); }
 }
 body {
+	min-height:100vh;
+    display:flex;
+    flex-direction:column;
     background: linear-gradient(135deg, #74ebd5, #9face6);
 }
 </style>
@@ -38,7 +42,7 @@ body {
 
 <body class="bg-light">
 
-<div class="d-flex align-items-center" style="min-height:100vh;">
+<div class="main-content d-flex align-items-center flex-grow-1">
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-12 col-sm-10 col-md-6 col-lg-5">
@@ -112,7 +116,16 @@ if (error != null) {
 </div>
 </div>
 </div>
-
+<footer class="footer">
+    <div class="container">
+        <p class="footer-text">
+            © 2026 Salon Management System. All Rights Reserved.
+        </p>
+        <p class="footer-subtext">
+            Crafted with <span>❤</span> for Beauty & Wellness Professionals
+        </p>
+    </div>
+</footer>
 <!-- FLASH PARAM HANDLER -->
 <script>
 (function () {
