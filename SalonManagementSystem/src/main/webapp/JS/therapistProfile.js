@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 // ================= WAIT FOR DOM =================
 document.addEventListener('DOMContentLoaded', function () {
 

@@ -20,7 +20,7 @@
         <a href="#" class="active">Home</a>
         <a href="#">Conversation with Client</a>
         <a href="#">Ratings</a>
-        <a href="#">Profile</a>
+        <a href="therapistProfile.jsp">Profile</a>
     </div>
 </div>
 

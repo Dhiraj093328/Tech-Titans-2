@@ -699,7 +699,7 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;                   /* To fix mobile issue */
+    flex-wrap: wrap;   /* ← THIS LINE fixes mobile issue */
 }
 
 

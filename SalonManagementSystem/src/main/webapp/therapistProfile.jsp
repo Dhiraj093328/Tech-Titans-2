@@ -3,24 +3,24 @@
 
 <%
 
-Integer userId = (Integer) session.getAttribute("userId");
+Integer therapistId = (Integer) session.getAttribute("therapistId");
 
-if (userId == null) 
+if (therapistId == null) 
 {
-    response.sendRedirect("userLogin.jsp");
+    response.sendRedirect("therapistLogin.jsp");
     return;
 }
 %>
 
-<%@ page import="test.UserDAO, test.User" %>
+<%@ page import="test.TherapistDao, test.Therapist" %>
 
 <%
-User user = UserDAO.getUserById(userId);
+Therapist therapist = TherapistDao.getTherapistById(therapistId);
 
 //For Check purpose only
-if (user == null) 
+if (therapist == null) 
 {
-   response.sendRedirect("userLogin.jsp");
+   response.sendRedirect("therapistLogin.jsp");
    return;
 }
 %>
@@ -32,7 +32,7 @@ if (user == null)
     <title>User Profile</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/CSS/userProfile.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/CSS/therapistProfile.css">
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -46,12 +46,12 @@ if (user == null)
         <div class="logo">Beauty Hub</div>
 
         <nav class="nav">
-            <a href="UserDashboard.jsp">Home</a>
+            <a href="TherapistDashboard.jsp">Home</a>
             <a href="#">My Salons</a>
             <a href="#">Chat with Expert</a>
             <a href="#">Trending Style</a>
             <a href="#">Notifications</a>
-            <a href="userProfile.jsp" class="active">Profile</a>
+            <a href="therapistProfile.jsp" class="active">Profile</a>
         </nav>
     </div>
 </header>
@@ -64,7 +64,7 @@ if (user == null)
         <div class="profile-header">
             <div class="profile-photo-container">
                 <img id="profilePhoto"
-                     src="https://ui-avatars.com/api/?name=<%= user.getName().replace(" ", "+") %>&size=150&background=667eea&color=fff&bold=true"
+                     src="https://ui-avatars.com/api/?name=<%= therapist.getName().replace(" ", "+") %>&size=150&background=667eea&color=fff&bold=true"
                      alt="Profile Photo"
                      class="profile-photo">
 
@@ -80,8 +80,8 @@ if (user == null)
                        onchange="changePhoto(event)">
             </div>
 
-            <h1 class="profile-name" id="displayName"><%= user.getName() %></h1>
-            <p class="profile-username" id="displayUsername"><%= user.getUsername() %></p>
+            <h1 class="profile-name" id="displayName"><%= therapist.getName() %></h1>
+            <p class="profile-username" id="displayUsername"><%= therapist.getUsername() %></p>
             
         </div>
 
@@ -100,40 +100,40 @@ if (user == null)
 
             <!-- User Information -->
             <div class="info-grid">
-
+            
                 <div class="info-item">
-                    <div class="info-label">User ID</div>
-                    <div class="info-value" id="userId">UID-<%= user.getUserId() %></div>
+                    <div class="info-label">Therapist ID</div>
+                    <div class="info-value" id="userId">UID-<%= therapist.getTherapistId() %></div>
                 </div>
 
-                <div class="info-item">
+                 <div class="info-item">
                     <div class="info-label">Full Name</div>
-                    <div class="info-value" id="fullName"><%= user.getName() %></div>
+                    <div class="info-value" id="fullName"><%= therapist.getName() %></div>
                 </div>
-
+                
+                <div class="info-item">
+                    <div class="info-label">Username</div>
+                    <div class="info-value" id="username"><%= therapist.getUsername() %></div>
+                </div>
+                
                 <div class="info-item">
                     <div class="info-label">Email Address</div>
-                    <div class="info-value" id="email"><%= user.getEmail() %></div>
+                    <div class="info-value" id="email"><%= therapist.getEmail() %></div>
                 </div>
 
                 <div class="info-item">
                     <div class="info-label">Contact Number</div>
-                    <div class="info-value" id="contactNo"><%= user.getContactNo() %></div>
+                    <div class="info-value" id="contactNo"><%= therapist.getContactNo() %></div>
                 </div>
 
                 <div class="info-item">
-                    <div class="info-label">Username</div>
-                    <div class="info-value" id="username"><%= user.getUsername() %></div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-label">Member Since</div>
-                    <div class="info-value">January 2024</div>
+                    <div class="info-label">Therapist Since</div>
+                    <div class="info-value">January 2022</div>
                 </div>
 
             </div>
 
-            <!-- Recent Appointments -->
+<!-- Recent Appointments -->
             <h2 class="section-title">
                 <span class="icon">📅</span>
                 Recent Appointment History
@@ -142,55 +142,63 @@ if (user == null)
             <table class="appointments-table">
                 <thead>
                 <tr>
-                    <th>User Appointment ID</th>
+                    <th>Appointment ID</th>
                     <th>Date & Time</th>
-                    <th>Username</th>
+                    <th>Customer</th>
+                    <th>Service</th>
                     <th>Status</th>
-                    <th>Services</th>
+                    <th>Duration</th> 
                 </tr>
                 </thead>
 
-                <tbody id="appointmentsBody">
-                <tr>
-                    <td>#APT-001</td>
-                    <td>Feb 05, 2026 - 10:00 AM</td>
-                    <td>Alex Johnsonn</td>
-                    <td><span class="status-badge status-completed">Completed</span></td>
-                    <td>Haircut & Styling</td>
-                </tr>
+            <tbody id="appointmentsBody">    
+                    <tr>
+                        <td>TAPT-501</td>
+                         <td>08 Feb 2026 · 09:30 AM</td>
+                         <td>arjun_r</td>
+                         <td>Men Haircut</td>
+                         <td><span class="status-badge status-completed">Completed</span></td>
+                         <td>30 min</td>
+                    </tr>
 
-                <tr>
-                    <td>#APT-002</td>
-                    <td>Feb 10, 2026 - 2:30 PM</td>
-                    <td>Liam Johnson</td>
-                    <td><span class="status-badge status-upcoming">Upcoming</span></td>
-                    <td>Beard Trim</td>
-                </tr>
+                     <tr>
+                        <td>TAPT-502</td>
+                        <td>08 Feb 2026 · 11:00 AM</td>
+                        <td>pooja_s</td>
+                        <td>Hair Spa</td>
+                        <td><span class="status-badge status-upcoming">Upcoming</span></td>
+                        <td>60 min</td>
+                     </tr>
 
-                <tr>
-                    <td>#APT-003</td>
-                    <td>Jan 28, 2026 - 11:00 AM</td>
-                    <td>Emily Davis</td>
-                    <td><span class="status-badge status-completed">Completed</span></td>
-                    <td>Facial Treatment</td>
-                </tr>
+                      <tr>
+                         <td>TAPT-503</td>
+                         <td>07 Feb 2026 · 02:15 PM</td>
+                         <td>manish_k</td>
+                         <td>Beard Trim + Styling</td>
+                         <td><span class="status-badge status-completed">Completed</span></td>
+                         <td>40 min</td>
+                      </tr>
 
-                <tr>
-                    <td>#APT-004</td>
-                    <td>Jan 15, 2026 - 3:00 PM</td>
-                    <td>Robert Wilson</td>
-                    <td><span class="status-badge status-cancelled">Cancelled</span></td>
-                    <td>Hair Coloring</td>
-                </tr>
+                       <tr>
+                          <td>TAPT-504</td>
+                          <td>06 Feb 2026 · 04:30 PM</td>
+                          <td>neelam_p</td>
+                          <td>Facial Treatment</td>
+                          <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                          <td>—</td>
+                       </tr>
 
-                <tr>
-                    <td>#APT-005</td>
-                    <td>Jan 10, 2026 - 9:00 AM</td>
-                    <td>Ethan Davis</td>
-                    <td><span class="status-badge status-completed">Completed</span></td>
-                    <td>Haircut & Styling</td>
-                </tr>
-                </tbody>
+                        <tr>
+                           <td>TAPT-505</td>
+                           <td>05 Feb 2026 · 10:00 AM</td>
+                           <td>rohan_d</td>
+                           <td>Hair Coloring</td>
+                           <td><span class="status-badge status-completed">Completed</span></td>
+                           <td>90 min</td>
+                           </tr>
+
+             </tbody>
+                
             </table>
 
         </div>
@@ -202,32 +210,32 @@ if (user == null)
     <div class="modal-content">
         <h2 class="modal-header">Edit Profile</h2>
 
-        <form id="editForm" action="UpdateProfileServlet" method="post">
+        <form id="editForm" action="UpdateTherapistServlet" method="post">
 
-            <input type="hidden" name="userId" value="<%= user.getUserId() %>">
+            <input type="hidden" name="userId" value="<%= therapist.getTherapistId() %>">
 
             <div class="form-group">
                 <label>Full Name</label>
                 <input type="text" id="editName" name="editName"
-                       value="<%= user.getName() %>" required>
+                       value="<%= therapist.getName() %>" required>
             </div>
 
             <div class="form-group">
                 <label>Email Address</label>
                 <input type="email" id="editEmail" name="editEmail"
-                       value="<%= user.getEmail() %>" required>
+                       value="<%= therapist.getEmail() %>" required>
             </div>
 
             <div class="form-group">
                 <label>Contact Number</label>
                 <input type="tel" id="editContact" name="editContact"
-                       value="<%= user.getContactNo() %>" required>
+                       value="<%= therapist.getContactNo() %>" required>
             </div>
 
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" id="editUsername" name="editUsername"
-                       value="<%= user.getUsername() %>" required>
+                       value="<%= therapist.getUsername() %>" required>
             </div>
 
             <div class="modal-actions">
@@ -246,7 +254,7 @@ if (user == null)
         <h2 class="modal-header">Change Password</h2>
 
         <form id="passwordForm"
-              action="<%=request.getContextPath()%>/ChangePasswordServlet"
+              action="<%=request.getContextPath()%>/ChangeTherapistPasswordServlet"
               method="post">
 
             <div class="form-group">
@@ -303,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <!-- JS -->
-<script src="<%= request.getContextPath() %>/JS/userProfile.js"></script>
+<script src="<%= request.getContextPath() %>/JS/therapistProfile.js"></script>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
@@ -311,4 +319,4 @@ document.addEventListener('DOMContentLoaded', function () {
     <p class="footer-subtext">Crafted with ❤️ for Beauty & Wellness Professionals</p>
 </footer>
 </body>
-</html> 
+</html>

@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+Integer ownerId = (Integer) session.getAttribute("ownerId");
+
+if (ownerId == null) 
+{
+    response.sendRedirect("adminLogin.jsp");
+    return;
+}
+%>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,12 +26,12 @@
 <div class="header">
     <div class="logo">Beauty Hub Admin</div>
     <div class="nav">
-        <a href="#" class="active">Home</a>
+        <a href="AdminDashboard.jsp" class = "active">Home</a>
         <a href="#">Appointments</a>
         <a href="#">Chat with Client</a>
         <a href="#">Trending Style</a>
         <a href="#">Ratings</a>
-        <a href="#">Profile</a>
+        <a href="<%= request.getContextPath() %>/ownerProfile.jsp">Profile</a>
     </div>
 </div>
 

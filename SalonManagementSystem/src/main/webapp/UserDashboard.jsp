@@ -22,8 +22,8 @@
         <a href="#">Chat with Expert</a>
         <a href="#">Trending Style</a>
         <a href="#">Notifications</a>
-        <a href="#">Profile</a>
-    </div>
+        <a href="userProfile.jsp">Profile</a>    
+     </div>
 </div>
 
 <!-- ================= HERO SECTION ================= -->
