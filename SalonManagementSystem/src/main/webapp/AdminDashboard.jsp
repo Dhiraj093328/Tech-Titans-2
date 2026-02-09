@@ -9,10 +9,9 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="<%= request.getContextPath() %>/CSS/AdminDashboard.css">
-    <link href="CSS/popup.css" rel="stylesheet">
 </head>
 <body>
-<div id="popup" class="popup"></div>
+
 <!-- ================= HEADER ================= -->
 <div class="header">
     <div class="logo">Beauty Hub Admin</div>
@@ -76,6 +75,7 @@
         </div>
     </div>
 </div>
+
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
     <p class="footer-text">© 2026 Salon Management System. All Rights Reserved.</p>
@@ -84,26 +84,5 @@
 
 <!-- JS -->
 <script src="<%= request.getContextPath() %>/JS/AdminDashboard.js"></script>
-<script>
-(function () {
-    const params = new URLSearchParams(window.location.search);
-    const flash = params.get("flash");
-
-    if (!flash) return;
-
-    if (flash === "register")
-        localStorage.setItem("flashMsg", "Registration successful ✅ Please login");
-    if (flash === "Adminregister")
-        localStorage.setItem("flashMsg", "Registration successful ✅ Please login Admin");
-
-    if (flash === "login")
-        localStorage.setItem("flashMsg", "Login successful 🎉 Welcome!");
-    if (flash === "Adminlogin")
-        localStorage.setItem("flashMsg", "Login successful 🎉 Welcome Back Admin!");
-
-})();
-</script>
-
-<script src="JS/flashPopup.js"></script>
 </body>
 </html>

@@ -13,14 +13,9 @@
     transform: translateY(-15px);
     transition: .35s;
     z-index: 9999;
-    pointer-events: none;
 }
 
 .flash-popup.show{
     opacity: 1;
     transform: translateY(0);
 }
-.popup {
-    pointer-events: none;
-}
-

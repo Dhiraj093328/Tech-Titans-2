@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Shop Owner Login Page</title>
+<title>Admin Login Page</title>
 <link href="CSS/bootstrap.min.css" rel="stylesheet">
 <link href="CSS/popup.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
@@ -70,7 +70,7 @@ body {
 		<div class="col-12 col-sm-10 col-md-6 col-lg-4">
 			<div class="card shadow-lg rounded-4">
 				<div class="card-body p-4">
-					<h2 class="text-center fw-bold">Shop Owner Login</h2>
+					<h2 class="text-center fw-bold">Admin Login</h2>
 <%
 String error = (String) request.getAttribute("error");
 if (error != null) {
@@ -117,7 +117,7 @@ if (error != null) {
 						</button>
 						<div  class="text-center mt-3 d-flex justify-content-between" style="max-width: 260px; margin: auto;">
 							<a href="forgat" class="text-decoration-none">
-							Forgot Password?</a>
+							Forgat Password?</a>
   							<a href="adminRegister.jsp" class="text-decoration-none">
     							Create Account
   							</a>

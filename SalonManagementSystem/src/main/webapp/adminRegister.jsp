@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Shop Owner Registration Page</title>
+<title>Admin Registration Page</title>
 <link href="CSS/bootstrap.min.css" rel="stylesheet">
 <link href="CSS/popup.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
@@ -73,7 +73,7 @@ body {
         					<i class="bi bi-shop fs-3 text-success"></i>
     					</div>
 					</div>
-					<h2 class="text-center fw-bold mb-1">Create Shop Owner Account</h2>
+					<h2 class="text-center fw-bold mb-1">Create Admin Account</h2>
 					<p class="text-center text-muted mb-4">
     					Register your shop to get started
 					</p>
