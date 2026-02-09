@@ -9,7 +9,6 @@
 <title>Shop Owner Login Page</title>
 <link href="CSS/bootstrap.min.css" rel="stylesheet">
 <link href="CSS/popup.css" rel="stylesheet">
-<link href="CSS/ATFooter.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <style>
 
@@ -44,9 +43,6 @@
     transition: all 1.0s ease;
 }
 body {
-	min-height:100vh;
-    display:flex;
-    flex-direction:column;
 	background: linear-gradient(135deg, #74ebd5, #9face6);
 }
 .alert {
@@ -66,8 +62,9 @@ body {
 </style>
 </head>
 <body class="bg-light">
+<div id="popup" class="popup"></div>
 
-<div class="main-content d-flex align-items-center flex-grow-1" >
+<div class="d-flex align-items-center" style="min-height:100vh;">
 <div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-12 col-sm-10 col-md-6 col-lg-4">
@@ -137,16 +134,6 @@ if (error != null) {
 	</div>
 </div>
 </div>
-<footer class="footer">
-    <div class="container">
-        <p class="footer-text">
-            © 2026 Salon Management System. All Rights Reserved.
-        </p>
-        <p class="footer-subtext">
-            Crafted with <span>❤</span> for Beauty & Wellness Professionals
-        </p>
-    </div>
-</footer>
 <script>
 (function () {
     const params = new URLSearchParams(window.location.search);

@@ -7,19 +7,9 @@
 <title>Therapist Register Page</title>
 <link href="CSS/bootstrap.min.css" rel="stylesheet">
 <link href="CSS/popup.css" rel="stylesheet">
-<link href="CSS/ATFooter.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <style>
-.main-content{
-    padding-top:40px;
-    padding-bottom:80px;
-}
-body {
-	min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    background: linear-gradient(135deg, #74ebd5, #9face6);
-}
+
 .card {
   animation: fadeUp 0.5s ease;
 }
@@ -34,10 +24,10 @@ body {
 }
 </style>
 </head>
-<body class="bg-light">
+<body style="background: linear-gradient(135deg, #74ebd5, #9face6);">
 
 
-<div class="main-content flex-grow-1">
+<div class="d-flex align-items-center" style="min-height:100vh;">
 <div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-md-6">
@@ -68,7 +58,7 @@ if(error != null) {
 							<label class="form-label">Name</label>
 							<div class="input-group">
     							<span class="input-group-text"><i class="bi bi-person-circle"></i></span>
-								<input class="form-control" type="text" id="tname" name="tname" pattern="[A-Za-z ]{3,100}" placeholder="Enter Your Name"  required>
+								<input class="form-control" type="text" id="tname" name="tname" pattern="[A-Za-z ]{3,100}"  required>
 								<div class="invalid-feedback">
     								Name must contain only letters (minimum 3 characters)
   								</div>
@@ -79,7 +69,7 @@ if(error != null) {
 							<label class="form-label">Email</label>
 							<div class="input-group">
     							<span class="input-group-text"><i class="bi bi-envelope"></i></span>
-								<input class="form-control" type="email" id="tmail" name="tmail" maxlength="100" placeholder="Enter Your Email" required>
+								<input class="form-control" type="email" id="tmail" name="tmail" maxlength="100" required>
 								<div class="invalid-feedback">
     								Please enter a valid email address
   								</div>	
@@ -90,7 +80,7 @@ if(error != null) {
 							<label class="form-label">Contact No</label>
 							<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-telephone"></i></span>
-								<input class="form-control" type="text" id="tcontact" name="tcontact" pattern="[0-9]{10}" maxlength="10" placeholder="Enter Your Mobile No."  required>
+								<input class="form-control" type="text" id="tcontact" name="tcontact" pattern="[0-9]{10}" maxlength="10"  required>
 								<div class="invalid-feedback">
     								Contact number must be exactly 10 digits
   								</div>
@@ -101,7 +91,7 @@ if(error != null) {
 							<label class="form-label">Username</label>
 							<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-								<input class="form-control" type="text" id="tuser" name="tuser"  pattern="[A-Za-z0-9._]{5,20}" placeholder="Enter Your Username" required>
+								<input class="form-control" type="text" id="tuser" name="tuser"  pattern="[A-Za-z0-9._]{5,20}" required>
 								<div class="invalid-feedback">
   									  Username must be 5–20 characters (letters, numbers, . or _)
   								</div>
@@ -111,7 +101,7 @@ if(error != null) {
 							<label class="form-label">Password</label>
 							<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-								<input class="form-control" id="password" type="password" name="tpass"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}" placeholder="Enter Your Password"  required>
+								<input class="form-control" id="password" type="password" name="tpass"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"  required>
 								<div class="invalid-feedback">
     								Password must contain uppercase, lowercase, number & 8+ characters
   								</div>
@@ -142,16 +132,7 @@ if(error != null) {
 	</div>
 </div>
 </div>
-<footer class="footer">
-    <div class="container">
-        <p class="footer-text">
-            © 2026 Salon Management System. All Rights Reserved.
-        </p>
-        <p class="footer-subtext">
-            Crafted with <span>❤</span> for Beauty & Wellness Professionals
-        </p>
-    </div>
-</footer>
+
 <script>
 (function () {
     const params = new URLSearchParams(window.location.search);
