@@ -45,11 +45,7 @@ body {
 
 <div class="card shadow-lg rounded-4">
 <div class="card-body p-4">
-<div class="text-center mb-3">
-    <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width:64px;height:64px;">
-        <i class="bi bi-scissors fs-3 text-success"></i>
-    </div>
-</div>
+
 <h2 class="text-center fw-bold">Therapist Login</h2>
 
 <%
