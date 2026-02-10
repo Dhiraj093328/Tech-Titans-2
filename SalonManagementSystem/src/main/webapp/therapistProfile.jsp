@@ -43,7 +43,7 @@ if (therapist == null)
 <!-- ================= HEADER ================= -->
 <header class="header">
     <div class="header-inner">
-        <div class="logo">Beauty Hub</div>
+        <div class="logo">Beauty Hub Therapist</div>
 
         <nav class="nav">
             <a href="TherapistDashboard.jsp">Home</a>
