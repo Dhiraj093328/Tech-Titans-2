@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" %>
-
-    
+    pageEncoding="UTF-8" %>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,8 +114,8 @@ if (error != null) {
     						<span id="btnLoader" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
 						</button>
 						<div  class="text-center mt-3 d-flex justify-content-between" style="max-width: 260px; margin: auto;">
-							<a href="forgat" class="text-decoration-none">
-							Forgat Password?</a>
+							<a href="shopOwnerForgotPassword.jsp" class="text-decoration-none">
+							Forgot Password?</a>
   							<a href="adminRegister.jsp" class="text-decoration-none">
     							Create Account
   							</a>

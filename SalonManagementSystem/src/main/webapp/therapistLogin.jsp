@@ -95,7 +95,7 @@ if (error != null) {
 
 <div class="text-center mt-3 d-flex justify-content-between"
      style="max-width:260px;margin:auto;">
-    <a href="forgat" class="text-decoration-none">Forgot Password?</a>
+    <a href="therapistForgotPassword.jsp" class="text-decoration-none">Forgot Password?</a>
     <a href="therapistRegister.jsp" class="text-decoration-none">Create Account</a>
 </div>
 

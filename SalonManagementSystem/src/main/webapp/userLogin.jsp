@@ -69,7 +69,7 @@
 
                         <!-- Forgot Password -->
                         <div class="mb-3 text-end">
-                            <a href="#" class="forgot-password">Forgot Password?</a>
+                            <a href="forgotPassword.jsp" class="forgot-password">Forgot Password?</a>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100">
