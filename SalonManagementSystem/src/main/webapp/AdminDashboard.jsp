@@ -28,8 +28,6 @@ if (ownerId == null)
     <div class="nav">
         <a href="AdminDashboard.jsp" class = "active">Home</a>
         <a href="#">Appointments</a>
-        <a href="#">Chat with Client</a>
-        <a href="#">Trending Style</a>
         <a href="#">Ratings</a>
         <a href="<%= request.getContextPath() %>/ownerProfile.jsp">Profile</a>
     </div>

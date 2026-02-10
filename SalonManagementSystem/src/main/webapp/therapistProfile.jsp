@@ -47,10 +47,8 @@ if (therapist == null)
 
         <nav class="nav">
             <a href="TherapistDashboard.jsp">Home</a>
-            <a href="#">My Salons</a>
-            <a href="#">Chat with Expert</a>
-            <a href="#">Trending Style</a>
-            <a href="#">Notifications</a>
+            <a href="#">Chat with client</a>
+            <a href="#">Ratings</a>
             <a href="therapistProfile.jsp" class="active">Profile</a>
         </nav>
     </div>
