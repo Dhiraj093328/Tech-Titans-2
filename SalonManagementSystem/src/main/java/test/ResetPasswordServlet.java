@@ -50,7 +50,7 @@ public class ResetPasswordServlet extends HttpServlet {
             ps.setString(2, username);
             ps.executeUpdate();
 
-            request.setAttribute("success", "Password updated successfully! Redirecting to login…");
+            request.setAttribute("success", "Password updated successfully!");
             request.getRequestDispatcher("resetPassword.jsp").forward(request, response);
 
 
@@ -58,6 +58,9 @@ public class ResetPasswordServlet extends HttpServlet {
         catch (Exception e) 
         {
             System.out.println(e);
+            request.setAttribute("error", "Something went wrong. Please try again.");
+            request.setAttribute("username", username);
+            request.getRequestDispatcher("resetPassword.jsp").forward(request, response);
         }
 	}
 
