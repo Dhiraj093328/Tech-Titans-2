@@ -18,7 +18,7 @@
     <div class="logo">Beauty Hub</div>
     <div class="nav">
         <a href="#" class="active">Home</a>
-        <a href="#">My Salons</a>
+        <a href="MySalons.jsp">My Salons</a>
         <a href="#">Chat with Expert</a>
         <a href="TrendingSample.jsp">Trending Style</a>
         <a href="#">Notifications</a>
