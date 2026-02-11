@@ -14,7 +14,7 @@
 
 <body>
 
-<!-- ================= HEADER ================= -->+
+<!-- ================= HEADER ================= -->
 <div class="header">
     <div class="logo">Beauty Hub</div>
     <div class="nav">
