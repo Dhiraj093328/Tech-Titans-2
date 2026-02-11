@@ -52,7 +52,7 @@ public class VerifyOtpServlet extends HttpServlet {
 
                 Timestamp now = new Timestamp(System.currentTimeMillis());
 
-                //OTP MATCH + NOT EXPIRED
+                //CAPTCHA MATCH + NOT EXPIRED
                 if (dbOtp != null && dbOtp.equals(otp) && expiry.after(now)) 
                 {
 
@@ -62,9 +62,8 @@ public class VerifyOtpServlet extends HttpServlet {
                 }
             }
 
-            //Invalid or expired OTP
-            request.setAttribute("error", "Invalid or expired OTP!");
-            request.setAttribute("username", username);
+            //Invalid or expired Captcha
+            request.setAttribute("error", "Invalid or expired Captcha!");
             request.getRequestDispatcher("verifyOtp.jsp").forward(request, response);
 
         } 

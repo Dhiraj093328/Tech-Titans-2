@@ -15,6 +15,9 @@
 
     <div class="auth-header">
         <h2>Verify Captcha</h2>
+        <p style="margin-top:6px;color:#666;font-size:14px;">
+            User Password Recovery
+        </p>
     </div>
 
     <form action="VerifyOtpServlet" method="post">
@@ -33,6 +36,10 @@
         </div>
 
         <button class="btn">Verify Captcha</button>
+        
+        <div class="link">
+            <a href="userLogin.jsp">Back to Login</a>
+        </div>
 
     </form>
 

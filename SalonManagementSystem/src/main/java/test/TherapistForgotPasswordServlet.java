@@ -48,7 +48,7 @@ public class TherapistForgotPasswordServlet extends HttpServlet {
             if (rs.next()) 
             {
 
-                //Generate OTP + expiry
+                //Generate Captcha + expiry
                 String otp = String.valueOf(100000 + new Random().nextInt(900000));
                 LocalDateTime expiry = LocalDateTime.now().plusMinutes(5);
 
@@ -63,12 +63,12 @@ public class TherapistForgotPasswordServlet extends HttpServlet {
                 request.setAttribute("username", username);
                 request.setAttribute("otp", otp); 
 
-                request.getRequestDispatcher("therapistVerifyOtp.jsp").forward(request, response);
+                request.getRequestDispatcher("therapistShowOtp.jsp").forward(request, response);
 
             } 
             else 
             {
-                request.setAttribute("error", "Username not found!");
+                request.setAttribute("error", "Invalid Username!");
                 request.getRequestDispatcher("therapistForgotPassword.jsp").forward(request, response);
             }
 

@@ -49,28 +49,28 @@ public class ShopOwnerForgotPasswordServlet extends HttpServlet {
             if (rs.next()) 
             {
 
-                //Generate OTP + expiry
+                //Generate Captcha + expiry
                 String otp = String.valueOf(100000 + new Random().nextInt(900000));
                 LocalDateTime expiry = LocalDateTime.now().plusMinutes(5);
 
-                //Store OTP in DB
+                //Store Captcha in DB
                 PreparedStatement upd = con.prepareStatement("UPDATE shop_owner SET reset_otp=?, otp_expiry=? WHERE username=?");
                 upd.setString(1, otp);
                 upd.setTimestamp(2, Timestamp.valueOf(expiry));
                 upd.setString(3, username);
                 upd.executeUpdate();
 
-                //IMPORTANT (for OTP display in JSP)
+                //IMPORTANT (for Captcha display in JSP)
                 request.setAttribute("username", username);
                 request.setAttribute("otp", otp);
 
-                //Forward to OTP page
-                request.getRequestDispatcher("shopOwnerVerifyOtp.jsp").forward(request, response);
+                //Forward to Captcha page
+                request.getRequestDispatcher("shopOwnerShowOtp.jsp").forward(request, response);
 
             } 
             else 
             {
-                request.setAttribute("error", "Username not found!");
+                request.setAttribute("error", "Invalid Username!");
                 request.getRequestDispatcher("shopOwnerForgotPassword.jsp").forward(request, response);
             }
 

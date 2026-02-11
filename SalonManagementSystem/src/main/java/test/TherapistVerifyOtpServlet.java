@@ -53,14 +53,15 @@ public class TherapistVerifyOtpServlet extends HttpServlet {
 
                     request.setAttribute("username", username);
                     request.getRequestDispatcher("therapistResetPassword.jsp").forward(request, response);
+                    return;
                 } 
-                else 
-                {
-                    request.setAttribute("error", "Invalid or expired OTP!");
-                    request.getRequestDispatcher("therapistShowOtp.jsp").forward(request, response);
-                }
-            }
-
+               
+     
+              }
+            
+                  request.setAttribute("error", "Invalid or expired Captcha!");
+                  request.getRequestDispatcher("therapistVerifyOtp.jsp").forward(request, response);
+                
         } 
         catch (Exception e) 
         {

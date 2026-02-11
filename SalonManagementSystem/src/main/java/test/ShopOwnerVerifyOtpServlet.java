@@ -61,7 +61,7 @@ public class ShopOwnerVerifyOtpServlet extends HttpServlet {
                 } 
                 else 
                 {
-                    request.setAttribute("error", "Invalid or expired OTP!");
+                    request.setAttribute("error", "Invalid or expired Captcha!");
                     request.setAttribute("username", username);
                     request.getRequestDispatcher("shopOwnerVerifyOtp.jsp").forward(request, response);
                 }

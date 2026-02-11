@@ -25,13 +25,13 @@
 
         
         <div class="msg">
-            Your Captcha is: <b>${otp}</b>
+            Invalid Captcha : <b>${otp}</b>
         </div>
 
         <div class="input-group">
             <i class="fa fa-key"></i>
             <input type="text" name="otp"
-                   placeholder="Enter Captcha" required>
+                   placeholder="Enter Valid Captcha" required>
         </div>
 
         <button class="btn">Verify Captcha</button>
@@ -41,6 +41,10 @@
                 <%= request.getAttribute("error") %>
             </p>
         <% } %>
+        
+        <div class="link">
+            <a href="therapistLogin.jsp">Back to Login</a>
+        </div>
 
     </form>
 

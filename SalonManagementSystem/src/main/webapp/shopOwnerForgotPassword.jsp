@@ -20,6 +20,29 @@
         </p>
     </div>
 
+<!-- ERROR MESSAGE -->
+<% if (request.getAttribute("error") != null) { %>
+    <div class="error-alert" id="errorMsg">
+        <%= request.getAttribute("error") %>
+    </div>
+
+    <script>
+        setTimeout(function() 
+        		{
+            var msg = document.getElementById("errorMsg");
+            if (msg) 
+            {
+                msg.style.opacity = "0";
+                msg.style.transition = "opacity 0.5s ease";
+                setTimeout(function() 
+                		{
+                    msg.style.display = "none";
+                }, 500);
+            }
+        }, 4000); //4 seconds
+    </script>
+<% } %>
+
     <form action="ShopOwnerForgotPasswordServlet" method="post">
 
         <div class="input-group">

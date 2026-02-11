@@ -14,7 +14,7 @@
 <div class="auth-card">
 
     <div class="auth-header">
-        <h2>Verify OTP</h2>
+        <h2>Verify Captcha</h2>
     </div>
 
     <form action="VerifyOtpServlet" method="post">
@@ -23,17 +23,27 @@
                value="${username}">
 
         <div class="msg">
-            Your OTP: <b>${otp}</b>
+            Invalid Captcha: <b>${otp}</b>
         </div>
 
         <div class="input-group">
             <i class="fa fa-key"></i>
             <input type="text" name="otp"
-                   placeholder="Enter OTP" required>
+                   placeholder="Enter Valid Captcha" required>
         </div>
 
-        <button class="btn">Verify OTP</button>
-
+        <button class="btn">Verify Capcha</button>
+        
+        <% if(request.getAttribute("error") != null) { %>
+            <p style="color:red;text-align:center;margin-top:12px;">
+                <%= request.getAttribute("error") %>
+            </p>
+        <% } %>
+        
+        <div class="link">
+            <a href="userLogin.jsp">Back to Login</a>
+        </div>
+        
     </form>
 
 </div>
