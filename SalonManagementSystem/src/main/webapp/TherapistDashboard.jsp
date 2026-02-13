@@ -18,7 +18,7 @@
     <div class="logo">Beauty Hub Therapist</div>
     <div class="nav">
         <a href="#" class="active">Home</a>
-        <a href="#">Conversation with Client</a>
+        <a href="ChatHistoryServlet?userId=1&therapistId=2&role=therapist">Conversation with Client</a>
         <a href="#">Ratings</a>
         <a href="therapistProfile.jsp">Profile</a>
     </div>
