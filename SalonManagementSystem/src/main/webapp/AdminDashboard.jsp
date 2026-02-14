@@ -27,7 +27,7 @@ if (ownerId == null)
     <div class="logo">Beauty Hub Admin</div>
     <div class="nav">
         <a href="AdminDashboard.jsp" class = "active">Home</a>
-        <a href="#">Appointments</a>
+     <a href="<%=request.getContextPath()%>/ownerAppointments">Appoinments</a>
         <a href="#">Ratings</a>
         <a href="<%= request.getContextPath() %>/ownerProfile.jsp">Profile</a>
     </div>

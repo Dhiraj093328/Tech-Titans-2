@@ -22,7 +22,7 @@
         <a href="MySalons.jsp">My Salons</a>
         <a href="#">Chat with Expert</a>
         <a href="TrendingSample.jsp" class="active">Trending Style</a>
-        <a href="#">Notifications</a>
+       <a href="<%=request.getContextPath()%>/UserNotificationsServlet">Notifications</a>
         <a href="userProfile.jsp">Profile</a>
     </div>
 </div>
