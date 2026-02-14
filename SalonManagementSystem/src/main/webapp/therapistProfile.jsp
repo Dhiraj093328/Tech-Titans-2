@@ -47,7 +47,7 @@ if (therapist == null)
 
         <nav class="nav">
             <a href="TherapistDashboard.jsp">Home</a>
-            <a href="#">Conversation with client</a>
+            <a href="ChatHistoryServlet?userId=1&therapistId=2&role=therapist">Conversation with Client</a>
             <a href="#">Ratings</a>
             <a href="therapistProfile.jsp" class="active">Profile</a>
         </nav>

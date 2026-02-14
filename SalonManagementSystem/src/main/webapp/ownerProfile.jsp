@@ -55,10 +55,16 @@ if (owner.getClosing_time() != null) {
 
         <nav class="nav">
             <a href="AdminDashboard.jsp">Home</a>
+<<<<<<< HEAD
              <a href="<%=request.getContextPath()%>/ownerAppointments" class="active">Appoinments</a>
 
         <a href="#">Ratings</a>
             <a href="ownerProfile.jsp" class="active">Profile</a>
+=======
+            <a href="#">Appointments</a>
+            <a href="#">Ratings</a>
+            <a href="ownerProfile.jsp">Profile</a>
+>>>>>>> 8f3f1cb6e47a04af9002836664594e6e083bb018
         </nav>
     </div>
 </header>

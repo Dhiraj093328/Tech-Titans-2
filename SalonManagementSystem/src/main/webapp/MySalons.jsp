@@ -32,6 +32,7 @@
 <body>
 <!-- ================= HEADER ================= -->
 <div class="header">
+<<<<<<< HEAD
   <div class="logo">Beauty Hub</div>
   <div class="nav">
     <a href="<%=request.getContextPath()%>/UserDashboard.jsp">Home</a>
@@ -41,6 +42,17 @@
 <a href="<%=request.getContextPath()%>/UserNotificationsServlet">Notifications</a>
     <a href="<%=request.getContextPath()%>/userProfile.jsp">Profile</a>
   </div>
+=======
+    <div class="logo">Beauty Hub</div>
+    <div class="nav">
+        <a href="UserDashboard.jsp" >Home</a>
+        <a href="MySalons.jsp" class="active">My Salons</a>
+        <a href="ChatHistoryServlet?userId=1&therapistId=2&role=therapist">Chat with Expert</a>
+        <a href="TrendingSample.jsp">Trending Style</a>
+        <a href="#">Notifications</a>
+        <a href="userProfile.jsp">Profile</a>    
+     </div>
+>>>>>>> 8f3f1cb6e47a04af9002836664594e6e083bb018
 </div>
 
 <nav class="navbar navbar-dark bg-dark mb-4">
