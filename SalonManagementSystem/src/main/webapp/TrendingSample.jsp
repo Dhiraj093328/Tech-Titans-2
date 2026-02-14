@@ -20,7 +20,7 @@
     <div class="nav">
         <a href="UserDashboard.jsp">Home</a>
         <a href="MySalons.jsp">My Salons</a>
-        <a href="#">Chat with Expert</a>
+        <a href="ChatHistoryServlet?userId=1&therapistId=2&role=therapist">Chat with Expert</a>
         <a href="TrendingSample.jsp" class="active">Trending Style</a>
         <a href="#">Notifications</a>
         <a href="userProfile.jsp">Profile</a>
